@@ -11,3 +11,10 @@ socket.on('disconnect', function () {
 socket.on('newMessage', function (message) {
   console.log("newMessage", message);
 });
+
+socket.emit('createMessage', {
+  from: 'John',
+  text: 'Hey'
+}, function (message) {
+  console.log('Got it.', message);
+});
