@@ -21,6 +21,7 @@ io.on('connection', (socket) => {
       callback('Name and room are required');
     }
 
+    console.log(socket.id);
     socket.join(params.room);
 
     socket.emit('newMessage', generateMessage('Admin', `Welocome to ${params.room}!`));
